@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import About from "./Components/About";
+import FirstDegree from "./Components/FirstDegree";
+import SecondDegree from "./Components/SecondDegree";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="text-center mt-3">
+          <h1>Equation Solver with an Unknown</h1>
+          <p className="fs-5">
+            To solve equations with one unknown of the first and second degree, write the coefficients in the appropriate places and calculate
+          </p>
+          <FirstDegree />
+          <SecondDegree />
+          <About />
+        </div>
+      </div>
     </div>
   );
 }
