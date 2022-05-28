@@ -19,7 +19,7 @@ let FirstDegree = (props) => {
 
     let calculate = () => {
         if (A !== "" && B !== "" && C !== "") {
-            setResult("  X = " + (Number(C) - Number(B)) / Number(A))
+            setResult("  x = " + Math.floor((Number(C) - Number(B)) / Number(A) * 100) / 100)
         }
         else {
             setResult("Please enter valid value")
@@ -30,19 +30,19 @@ let FirstDegree = (props) => {
         <div>
             <h2>First Order Equation Solver</h2>
             <p>Enter the A, B and C coefficients for the equation</p>
-            <p>Sample: "2x + 5 = 7" for -{'>'} A = 2 , B = 5 , C = 7 </p>
+            <p>Sample: "2<em>x</em> + 5 = 7" for -{'>'} <em>A</em> = 2 , <em>B</em> = 5 , <em>C</em> = 7 </p>
 
             <div className="input-group">
-                <input type="number" className="form-control me-2" placeholder="Enter the value of A" onChange={AChange}/>
+                <input type="number" className="form-control" placeholder="Enter A" onChange={AChange}/>
                 <span className="fs-3"> + </span>
-                <input type="number" className="form-control ms-2 me-2" placeholder="Enter the value of B" onChange={BChange}/>
+                <input type="number" className="form-control" placeholder="Enter B" onChange={BChange}/>
                 <span className="fs-3"> = </span>
-                <input type="number" className="form-control ms-2" placeholder="Enter the value of C" onChange={CChange}/>
+                <input type="number" className="form-control" placeholder="Enter C" onChange={CChange}/>
             </div>
 
-            <button className="btn btn-primary btn-lg mt-3 mb-3" onClick={calculate}>Calculate <i className="fas fa-check-circle"></i></button>
-            <div className="alert alert-success w-50">
-                Result <span className="fw-bold">{result}</span>
+            <button className="btn btn-primary" onClick={calculate}>Calculate <i className="fas fa-check-circle"></i></button>
+            <div className="alert-result">
+                <em><span>{result}</span></em>
             </div>
         </div>
     )

@@ -12,8 +12,14 @@ function App() {
           <p className="fs-5">
             To solve equations with one unknown of the first and second degree, write the coefficients in the appropriate places and calculate
           </p>
-          <FirstDegree />
-          <SecondDegree />
+          <div className="calc-container">
+            <div className="first-degree">
+              <FirstDegree />
+            </div>
+            <div className="second-degree">
+              <SecondDegree />
+            </div>
+          </div>
           <About />
         </div>
       </div>
